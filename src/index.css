@@ -4,7 +4,7 @@
 
 @layer base {
   html {
-    @apply bg-black text-white;
+    @apply bg-zinc-900 text-white font-sans-serif;
   }
 
   h1,
@@ -24,5 +24,15 @@
 
   h3 {
     @apply text-lg;
+  }
+}
+
+@layer components {
+  .debug {
+    @apply border-2 border-red-900;
+  }
+
+  .btn {
+    @apply bg-cyan-600 rounded p-1 pt-3 pr-4;
   }
 }
