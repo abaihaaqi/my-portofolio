@@ -1,46 +1,97 @@
+import { Title, Text, Box, Image, Flex, Space, Container, Card } from "@mantine/core";
 import reactLogo from "./assets/react.svg";
 import typescriptLogo from "./assets/typescript.svg";
-import Card from "./components/card";
-import { EnvelopeSimple, LinkedinLogo } from "phosphor-react"
+import mantineLogo from "./assets/mantine.svg";
 
 export default function App() {
-  const cardTags = ["reactjs", "tailwindcss", "supabase"]
-
   return (
     <>
-      <div className="">
-        <div className="text-center pt-16">
-          <h2 className="font-bold md:text-3xl">Nizar Baihaqi</h2>
-          <p className="text-xl">Front-end Web Developer</p>
-        </div>
-        <div className="md:flex justify-center pt-12">
-          <h1 className="pt-0 font-black text-center md:text-4xl">I'm creating</h1>
-          <span className="hidden md:inline">{`⠀`}</span>
-          <h1 className="font-black text-center md:text-4xl">websites with</h1>
-        </div>
-        <div className="pt-12 flex justify-center items-center gap-8">
-          <img className="w-20" src={reactLogo} alt="React Logo" />
-          <img className="w-20" src={typescriptLogo} alt="Typescript Logo" />
-        </div>
-      </div>
-      <div className="my-8 px-3 flex flex-wrap justify-center gap-6 mx-auto max-w-max">
-        <Card tags={cardTags}>Todo App</Card>
-        <Card tags={cardTags}>E-Commerce</Card>
-        <Card tags={cardTags}>Profile Page</Card>
-      </div>
-      <div>
-        <h1 className="text-center">Contact Me</h1>
-        <div className="my-4 flex flex-wrap justify-center items-center gap-2">
-          <button className="btn flex items-center min-w-max">
-            <LinkedinLogo size={32} />
-            Nizar Baihaqi
-          </button>
-          <button className="btn flex items-center min-w-max">
-            <EnvelopeSimple size={32} />
-            nizarbaihaq@gmail.com
-          </button>
-        </div>
-      </div>
+      <Box
+        sx={(theme) => ({
+          textAlign: "center",
+          padding: theme.spacing.xl,
+        })}
+      >
+        <Title order={3}>Nizar Ahmad Baihaqi</Title>
+        <Text>Front-end Web Developer</Text>
+      </Box>
+      <Box
+        sx={(theme) => ({
+          backgroundColor:
+            theme.colorScheme === "dark"
+              ? theme.colors.dark[8]
+              : theme.colors.gray[1],
+          padding: theme.spacing.xl,
+        })}
+      >
+        <Container size="xs">
+          <Title>I'm creating</Title>
+          <Title>websites with</Title>
+          <Space h="lg" />
+          <Flex justify="center" align="end" wrap="wrap" gap="md">
+            <Image
+              width={80}
+              caption="Reactjs"
+              src={reactLogo}
+              alt="React Logo"
+            />
+            <Image
+              width={80}
+              caption="Typescript"
+              src={typescriptLogo}
+              alt="Typescript Logo"
+            />
+            <Image
+              width={80}
+              caption="Mantine"
+              src={mantineLogo}
+              alt="Mantine Logo"
+            />
+          </Flex>
+        </Container>
+      </Box>
+      <Space h="lg" />
+      <Container size="md" style={{ marginLeft: "auto", marginRight: "auto" }}>
+        <Title order={4} align="center">
+          My Projects
+        </Title>
+        <Space h="md" />
+        <Flex justify="center" wrap="wrap" gap="md">
+          <Card withBorder>
+            <Card.Section>
+              <Image
+                width={300}
+                height={169}
+                src={null}
+                withPlaceholder
+              />
+            </Card.Section>
+            Todo App
+          </Card>
+          <Card withBorder>
+            <Card.Section>
+              <Image
+                width={300}
+                height={169}
+                src={null}
+                withPlaceholder
+              />
+            </Card.Section>
+            E-Commerce
+          </Card>
+          <Card withBorder>
+            <Card.Section>
+              <Image
+                width={300}
+                height={169}
+                src={null}
+                withPlaceholder
+              />
+            </Card.Section>
+            Profile Page
+          </Card>
+        </Flex>
+      </Container>
     </>
   );
 }
